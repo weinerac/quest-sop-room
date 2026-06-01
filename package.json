@@ -1,0 +1,12 @@
+{
+  "name": "quest-sop-room",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quest Sydney Olympic Park in-room guest page (POC) with ElevenLabs concierge.",
+  "scripts": {
+    "start": "serve -s . -l ${PORT:-3000}"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

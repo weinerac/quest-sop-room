@@ -1,0 +1,257 @@
+:root {
+  --cream: #FAF5EC;
+  --cream-2: #F3ECDD;
+  --ink: #2B2722;
+  --ink-soft: #6B6357;
+  --terracotta: #C4622D;
+  --terracotta-dark: #A9501F;
+  --green: #5E7355;
+  --green-dark: #4C5F45;
+  --line: #E4DACA;
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(43, 39, 34, 0.10);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Hanken Grotesk", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+}
+
+.screen {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--cream);
+  min-height: 100vh;
+  padding-bottom: 120px;
+  overflow: hidden;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+}
+.hero__img {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  animation: heroZoom 12s ease-out forwards;
+}
+@keyframes heroZoom { to { transform: scale(1); } }
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(43,39,34,0.45) 0%, rgba(43,39,34,0.15) 35%, rgba(43,39,34,0.78) 100%);
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 26px 24px 30px;
+  color: #fff;
+  width: 100%;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  position: absolute;
+  z-index: 3;
+  top: 22px;
+  left: 24px;
+}
+.brand__mark { color: #fff; }
+.hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+.hero__title {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+.hero__title span { font-style: italic; }
+.hero__room {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.room-tag {
+  background: var(--terracotta);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+.room-type { font-size: 14px; opacity: 0.92; }
+
+/* ---------- Sections ---------- */
+.section { padding: 26px 24px 0; }
+.section__label {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+
+/* ---------- Booking grid ---------- */
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.booking-cell {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.booking-cell__k {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--terracotta);
+  font-weight: 700;
+}
+.booking-cell__v {
+  font-family: "Fraunces", serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+.booking-cell__sub { font-size: 12px; color: var(--ink-soft); }
+
+/* ---------- Chips ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 9px; }
+.chip {
+  background: var(--cream-2);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+
+/* ---------- Property card ---------- */
+.property-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.property-card__media {
+  height: 150px;
+  background-image: url("https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+}
+.property-card__body { padding: 16px 18px 18px; }
+.property-card__title {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+.property-card__text { font-size: 14px; color: var(--ink-soft); }
+.property-card__meta {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green-dark);
+}
+
+/* ---------- Nearby ---------- */
+.nearby {
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.nearby__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.nearby__item:last-child { border-bottom: none; }
+.nearby__name { font-weight: 500; font-size: 15px; }
+.nearby__dist {
+  font-size: 13px;
+  color: #fff;
+  background: var(--green);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ---------- Assistant intro ---------- */
+.assistant-intro {
+  margin: 28px 24px 0;
+  padding: 22px 22px;
+  background: var(--green);
+  color: #fff;
+  border-radius: var(--radius);
+}
+.assistant-intro__title {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.assistant-intro__text { font-size: 14px; opacity: 0.94; }
+
+/* ---------- Footer strip ---------- */
+.footer-strip {
+  margin-top: 28px;
+  background: var(--terracotta);
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  font-size: 12.5px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.footer-strip .dot { opacity: 0.7; }
+
+/* Reveal animation */
+.section, .footer-strip { animation: rise 0.6s ease both; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
